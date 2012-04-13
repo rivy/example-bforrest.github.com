@@ -4,7 +4,7 @@
   <title><![CDATA[Improving Me]]></title>
   <link href="http://bforrest.github.com/atom.xml" rel="self"/>
   <link href="http://bforrest.github.com/"/>
-  <updated>2012-04-13T09:37:08-05:00</updated>
+  <updated>2012-04-13T09:38:39-05:00</updated>
   <id>http://bforrest.github.com/</id>
   <author>
     <name><![CDATA[Barry Forrest]]></name>
@@ -18,7 +18,7 @@
     <link href="http://bforrest.github.com/blog/2012/04/13/that-was-easy/"/>
     <updated>2012-04-13T07:18:00-05:00</updated>
     <id>http://bforrest.github.com/blog/2012/04/13/that-was-easy</id>
-    <content type="html"><![CDATA[<h2>That was easy</h2>
+    <content type="html"><![CDATA[<h2>Taking the Octopress plunge</h2>
 
 <p>Last night I took the plunge and set up <a href="http://octopress.org/">octopress</a> to host a <a href="http://bforrest.github.com">blog on github</a> using github pages. The documentation on octopress.org is impeccable. My only hic-up was not fully understanding that I need to run</p>
 
