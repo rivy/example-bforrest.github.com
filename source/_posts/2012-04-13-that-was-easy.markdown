@@ -5,7 +5,7 @@ date: 2012-04-13 07:18
 comments: true
 categories:
 ---
-That was easy
+Taking the Octopress plunge
 -------------
 
 Last night I took the plunge and set up [octopress](http://octopress.org/) to host a [blog on github](http://bforrest.github.com) using github pages. The documentation on octopress.org is impeccable. My only hic-up was not fully understanding that I need to run 
