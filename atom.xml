@@ -4,7 +4,7 @@
   <title><![CDATA[Improving Me]]></title>
   <link href="http://bforrest.github.com/atom.xml" rel="self"/>
   <link href="http://bforrest.github.com/"/>
-  <updated>2012-04-15T10:25:28-05:00</updated>
+  <updated>2012-04-15T12:19:29-05:00</updated>
   <id>http://bforrest.github.com/</id>
   <author>
     <name><![CDATA[Barry Forrest]]></name>
@@ -31,6 +31,25 @@
 <p>after committing and pushing from my source branch.</p>
 
 <p>Now to have some fun learning <a href="http://daringfireball.net/projects/markdown/">markdown</a> and how to style this so that it doesn&#8217;t look like everyone else&#8217;s octopress blog</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why Johnny can’t build a decent user interface.]]></title>
+    <link href="http://bforrest.github.com/blog/2011/04/23/Why-Johnny-can%27t-build-a-decent-ui/"/>
+    <updated>2011-04-23T00:00:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2011/04/23/Why-Johnny-can&#8217;t-build-a-decent-ui</id>
+    <content type="html"><![CDATA[<p><a href="http://jeffreyellis.org/blog/?p=8897" title="">Why Johnny can’t build a decent user interface.</a>An interesting read by <a href="http://thethinkerblog.com/?page_id=5">Jeffrey Ellis</a> that I picked up from a <a title="@shanselman" target="_blank" href="http://twitter.com/#!/shanselman">@shanselman</a> tweet. It is a reminder of why I write software -&gt; for end users to get something done. There&#8217;s a list of questions that I need to keep top of mind when developing applications:</p>
+
+<p>+Who are the users</p>
+
+<p>+What are their goals</p>
+
+<p>+What are their tasks</p>
+
+<p>+What information do the users need in order to accomplish those tasks</p>
+
+<p>The information within the comments is also enlightening.</p>
 ]]></content>
   </entry>
   
