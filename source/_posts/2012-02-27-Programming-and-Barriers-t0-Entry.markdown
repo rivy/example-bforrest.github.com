@@ -3,7 +3,7 @@ layout: post
 title: Programming & Barriers to Entry
 ---
 
-A [fellow learner](href="https://twitter.com/#!/coridrew") has posted ["Programming & Barriers to Entry"](href="http://truncatedcodr.wordpress.com/2012/01/25/programming-barriers-to-entry/"). Cori has much to say in this article concentrated around command line tools, vim and Ruby. I&#8217;d like to comment on some of the perceptions and share my own opinions.
+A [fellow learner](https://twitter.com/#!/coridrew) has posted ["Programming & Barriers to Entry"](http://truncatedcodr.wordpress.com/2012/01/25/programming-barriers-to-entry/). Cori has much to say in this article concentrated around command line tools, vim and Ruby. I&#8217;d like to comment on some of the perceptions and share my own opinions.
 
 <h3>Command Line</h3>
 
@@ -17,15 +17,15 @@ I picked up on some discord with regard to this type of interaction.
 
 Aren&#8217;t these the same type of interaction? CTL+Space pops up a list of available commands, arrow up/down to select and hit enter to paste that text into the window. Granted Intellisense is more polished and will show all of the overloads, but I honestly have a difficult time understanding the difference.
 
-[Git Immersion](href="http://gitimmersion.com/") was very helpful for ramping up quickly with Git. Git is just a plate full of awesome. I can get tons done with four basic commands after I can Alt+Tab to  my bash shell:
+[Git Immersion](http://gitimmersion.com) was very helpful for ramping up quickly with Git. Git is just a plate full of awesome. I can get tons done with four basic commands after I can Alt+Tab to  my bash shell:
 ```
 git checkout -b working_branch #separates my code from the herd.
 
 git status #to see all of the files that I've modified since my last checkin. 
 
-Typing &#8220;git add .&#8221; readies them to be committed to the local repository.
+git add . #readies them to be committed to the local repository.
 
-&#8220;git commit -m &#8216;checkin comment&#8217;&#8221; stores them away. 
+git commit -m &#8216;checkin comment&#8217; #stores them away. 
 ```
 I don't have to right-click anything! Since I'm working locally, I'm not at the mercy of a flaky connection to a central server. When I want to diff files, that happens locally too. 
 
@@ -45,7 +45,7 @@ gitk filename
 ```
 Will do the same for a single file.
 
-There is a git gui as well as  [Tortoise Git](href="http://code.google.com/p/tortoisegit/") to go along with Caleb's favorite.
+There is a git gui as well as  [Tortoise Git](http://code.google.com/p/tortoisegit/) to go along with Caleb's favorite.
 
 <h3>VIM</h3>
 
