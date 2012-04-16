@@ -1,24 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[{{ site.title }}]]></title>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}/"/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <title><![CDATA[Improving Me]]></title>
+  <link href="http://bforrest.github.com/atom.xml" rel="self"/>
+  <link href="http://bforrest.github.com/"/>
+  <updated>2012-04-16T16:21:25-05:00</updated>
+  <id>http://bforrest.github.com/</id>
   <author>
-    <name><![CDATA[{{ site.author | strip_html }}]]></name>
-    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+    <name><![CDATA[Barry Forrest]]></name>
+    
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  {% for post in site.posts limit: 20 %}
+  
   <entry>
-    <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-    <link href="{{ site.url }}{{ post.url }}"/>
-    <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>{{ site.url }}{{ post.id }}</id>
-    <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
+    <title type="html"><![CDATA[Everything Old is New Again]]></title>
+    <link href="http://bforrest.github.com/blog/2012/04/16/everything-old-is-new-again/"/>
+    <updated>2012-04-16T11:56:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2012/04/16/everything-old-is-new-again</id>
+    <content type="html"><![CDATA[<p>I spent some time over the weekend dragging along old posts from my tumblr blog that deal with programming. I didn&#8217;t bother with the instagram pictures or the four square checkins. After a few failed attempts to get the tumblr posts where the were suposed to be, I opted to stash them in a working directory and move them by hand.</p>
+
+<p>Now all of my <code>&lt;scarcasm&gt;</code>glorious code related posts<code>&lt;/sarcasm&gt;</code> are in one place, it&#8217;s time to dust up some posts about my shiny new play things <a href="http://twitter.github.com/bootstrap/" title="">Twitter Bootstrasp</a> <a href="https://octopress.org">Octopress</a> and <a href="http://daringfireball.net/projects/markdown/syntax" title="">Markdown</a>. Stand by for more intesting things in the very near future.</p>
+]]></content>
   </entry>
-  {% endfor %}
+  
+  <entry>
+    <title type="html"><![CDATA[That was easy]]></title>
+    <link href="http://bforrest.github.com/blog/2012/04/13/that-was-easy/"/>
+    <updated>2012-04-13T07:18:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2012/04/13/that-was-easy</id>
+    <content type="html"><![CDATA[<h2>Taking the Octopress plunge</h2>
+
+<p>Last night I took the plunge and set up <a href="http://octopress.org/">octopress</a> to host a <a href="http://bforrest.github.com">blog on github</a> using github pages. The documentation on octopress.org is impeccable. My only hic-up was not fully understanding that I need to run</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>after committing and pushing from my source branch.</p>
+
+<p>Now to have some fun learning <a href="http://daringfireball.net/projects/markdown/">markdown</a> and how to style this so that it doesn&#8217;t look like everyone else&#8217;s octopress blog</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Programming & Barriers to Entry]]></title>
+    <link href="http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry/"/>
+    <updated>2012-02-27T00:00:00-06:00</updated>
+    <id>http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry</id>
+    <content type="html"><![CDATA[<p>A <a href="https://twitter.com/#!/coridrew">fellow learner</a> has posted <a href="http://truncatedcodr.wordpress.com/2012/01/25/programming-barriers-to-entry/">&#8220;Programming &amp; Barriers to Entry&#8221;</a>. Cori has much to say in this article concentrated around command line tools, vim and Ruby. I&#8217;d like to comment on some of the perceptions and share my own opinions.</p>
+
+<h3>Command Line</h3>
+
+
+<p>I picked up on some discord with regard to this type of interaction.</p>
+
+<blockquote>
+
+&#8230;Intellisense (or lack thereof).  Ctrl-spacebar is my friend. It’s what I’ve grown to love. Typing /?—&gt;enter—&gt;up-arrow—&gt;space—&gt;command-I-really-need is a bit of a PITA. It feels like a clunky waste of time.
+
+</blockquote>
+
+
+<p>Aren&#8217;t these the same type of interaction? CTL+Space pops up a list of available commands, arrow up/down to select and hit enter to paste that text into the window. Granted Intellisense is more polished and will show all of the overloads, but I honestly have a difficult time understanding the difference.</p>
+
+<p><a href="http://gitimmersion.com">Git Immersion</a> was very helpful for ramping up quickly with Git. Git is just a plate full of awesome. I can get tons done with four basic commands after I can Alt+Tab to  my bash shell:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -b working_branch #separates my code from the herd.
+</span><span class='line'>
+</span><span class='line'>git status #to see all of the files that I've modified since my last checkin. 
+</span><span class='line'>
+</span><span class='line'>git add . #readies them to be committed to the local repository.
+</span><span class='line'>
+</span><span class='line'>git commit -m &#8216;checkin comment&#8217; #stores them away. </span></code></pre></td></tr></table></div></figure>
+
+
+<p>I don&#8217;t have to right-click anything! Since I&#8217;m working locally, I&#8217;m not at the mercy of a flaky connection to a central server. When I want to diff files, that happens locally too.</p>
+
+<p>I&#8217;ve got BeyondCompare set up so in the bach shell I can use</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git difftool </span></code></pre></td></tr></table></div></figure>
+
+
+<p>and then roll through all of the files that I&#8217;ve changed and it&#8217;s pretty snappy.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gitk all</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Shows the entire history of the repository</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gitk filename</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Will do the same for a single file.</p>
+
+<p>There is a git gui as well as  <a href="http://code.google.com/p/tortoisegit/">Tortoise Git</a> to go along with Caleb&#8217;s favorite.</p>
+
+<h3>VIM</h3>
+
+
+<p>It is a very powerful text editor. It really is language agnostic and enables development in a huge variety of languages. Visual Studio, not so much. I started fooling with VIM when I started doing the Ruby Koans. I stumbled through the help tutorial a few times over several months and got the hang of using VIM for navigating documents with the home row keys and pattern matching searches. I try to use it when I&#8217;m not doing .net development, but I&#8217;m still staying in the shallow end of the pool. I&#8217;m still much more comfortable navigating a C# project with Resharper/CodeRush inside VS than I think I&#8217;ll ever be with VIM, but VS has a 10 year head start.</p>
+
+<h3>Ruby and Macs</h3>
+
+
+<p>There seems to be a strong correlation between Macs and Ruby developers among <a href="http://dallashackclub.com/" target="_blank">Hack Club</a> attendees. Many of the folks who attend do own Macs. <a href="http://improvingenterprises.com/" target="_blank">Improving Enterprises</a>, my employer and sponsor of many wonderful user groups, has an amazing employee purchase plan for computers and many of the consultants take full advantage of that benefit. Several of the Macs at Hack Club are running Windows 7 in native mode and many more are running Windows 7 via VMWare Fusion of Parallels.</p>
+
+<p>I&#8217;d hazard a guess that <a href="ttp://twitter.com/gregvaughn" target="_blank">Greg Vaughn</a> is in the minority and using Ruby in OSX. <a href="http://twitter.com/amirrajan" target="_blank">Amir</a> boots to Windows natively via BootCamp and I believe does all of his Ruby development under Windows. I&#8217;ve installed Ruby 1.9 in my VMWare instance and use Growl For Windows and a ruby command prompt for SpecWatchr when I&#8217;m deliberately practicing BDD through the beauty of <a href="http://www.nspec.org/about" target="_blank">NSpec</a>. Ruby in this group is more about learning something new since most of the crew work in .net for paychecks.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[treetrim: Trims source code trees]]></title>
+    <link href="http://bforrest.github.com/blog/2012/01/21/Tree-Trim-Source-Cleaner/"/>
+    <updated>2012-01-21T00:00:00-06:00</updated>
+    <id>http://bforrest.github.com/blog/2012/01/21/Tree-Trim-Source-Cleaner</id>
+    <content type="html"><![CDATA[<p><a href="http://code.google.com/p/treetrim/">Treetrim:</a></p>
+
+<p>I&#8217;ve used this spiffy utility many times. Every time I see a need for it, I&#8217;m working on a PC that doesn&#8217;t have it installed and I can never remember the magic incantation that allowed Google to reveal it to me. So, since I&#8217;m starting to suffer from old-timers, I&#8217;ll keep a handy link for it right here ;-)</p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EF Code First & AppHarbor]]></title>
+    <link href="http://bforrest.github.com/blog/2011/08/25/EF-Code-First-%26-AppHarbor/"/>
+    <updated>2011-08-25T00:00:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2011/08/25/EF-Code-First-&-AppHarbor</id>
+    <content type="html"><![CDATA[<p>Since my employer, <a href="href=" title="http:/http://www.improvingenterprises.com/">Improving Enterprises</a> lined me up a new gig that uses Entity Framework Code First, I thought I kick off a learning side project with MVC3 and deploy it to [AppHarbor](href=&#8221;https://appharbor.com/&#8221;. Everything seemed simple enough. Use Nuget to install the code first bits, hammer out a couple of model and a datacontext and BOOM! data goes into a database.</p>
+
+<p>It wasn&#8217;t anything pretty, but I was ready to deploy it to AppHarbor. That sounded great, but my first deploy failed. The local build compiled and worked as expected. The source that I pushed to AppHarbor compiled without problem, but the deployment failed.</p>
+
+<p>Problem number one, I didn&#8217;t create a database on AppHarbor. The quick solution was to configure the database on AppHarbor following their instructions. My local compile was fine and I expected my deployment to work as well. Wrong.</p>
+
+<p>After a bit of googling, I found a reference to this <a href="href=" title="http://nuget.org/List/Packages/EFCodeFirst.CreateTablesOnly">EF Tables only</a> Nuget package. From the package writeup:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Adds a IDatabaseInitializer implementation for EF Code First CTP5, as a workaround for
+</span><span class='line'>situations where you need to update the tables, 
+</span><span class='line'>but can&#8217;t recreate the database. Works with AppHabor. 
+</span><span class='line'>To use simply set the DontDropDbJustCreateTablesIfModelChanged class as 
+</span><span class='line'>IDatabaseInitializer with DbDatabase.SetInitializer.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This package put a code file into the application&#8217;s App_Start folder. By un-commenting this line:</p>
+
+<figure class='code'><figcaption><span>&#8220;db initializer&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Database</span><span class="p">.</span><span class="n">SetInitializer</span><span class="p">(</span> <span class="k">new</span> <span class="n">DontDropDbJustCreateTablesIfModelChanged</span><span class="p">&lt;</span><span class="n">MyContext</span><span class="p">&gt;());</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, after following some clear instructions to configure my connection string with the AppHarbor standards and using this NuGet package, I now have my first MVC3 application successfully deployed to AppHarbor! Hopefully this will help others, but I&#8217;m happy just to have this information in a place where I&#8217;ll be able to find it again.</p>
+
+<p>Now to tweak, prune and watch it grow into something that is emblematic of my learning.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript Programming Patterns]]></title>
+    <link href="http://bforrest.github.com/blog/2011/08/21/Javascript-Programming-Patterns/"/>
+    <updated>2011-08-21T00:00:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2011/08/21/Javascript-Programming-Patterns</id>
+    <content type="html"><![CDATA[<p><a href="href=" title="http://www.klauskomenda.com/code/javascript-programming-patterns/#lazy">Javascript Programming Patterns</a></p>
+
+<p>Nice reference material that I got from <a href="href=" title="http://twitter.com/#!/jrgarcia">JR Garcia</a></p>
+
+<p>I&#8217;ve been away from web development for just a bit too long and have a lot of catching up to do with respect to all of the great work going on in the javascript space.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Css for Developers from Dallas TechFest]]></title>
+    <link href="http://bforrest.github.com/blog/2011/08/16/CSS-for-Developers/"/>
+    <updated>2011-08-16T00:00:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2011/08/16/CSS-for-Developers</id>
+    <content type="html"><![CDATA[<p>Here are some of my take aways from <a href="href=" title="http://ericsowell.com/">Eric Sowell&#8217;s</a> presentation at the <a href="href=" title="http://dallastechfest.com/">Dallas Tech Fest</a></p>
+
+<p>+Semantic markup makes reading html simpler</p>
+
+<p>+Modernizer of Html5Shim make older browsers work with semantic tags</p>
+
+<p>+Using a &#8220;css reset&#8221; can save you lots of grief and frustration</p>
+
+<p>The css reset Eric used came from Eric Meyer&#8217;s site. I&#8217;ve seen similar settings in the Blueprint Css style sheets.</p>
+
+<p>I aslo heard the phrase &#8220;In general, you should be more specific&#8221;. That sounds rather odd, but given a context of trying to cascade styles to UI elements, it makes more sense. When you can be more specific with your selectors, you will be less surprised by the result.</p>
+
+<p>For additional resources for learning about Css, Eric suggested books by Zeldman, Marcotte, Cederholm and Meyer.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Flat Tire Principle for Source Control]]></title>
+    <link href="http://bforrest.github.com/blog/2011/05/10/The-Flat-Tire-Principle-for-Source-Control/"/>
+    <updated>2011-05-10T00:00:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2011/05/10/The-Flat-Tire-Principle-for-Source-Control</id>
+    <content type="html"><![CDATA[<p><a href="href=" title="http://lostechies.com/erichexter/2009/05/19/the-flat-tire-principal-for-source-control/">The Flat Tire Principle for Source Control</a></p>
+
+<p>Here&#8217;s an oldie but a a goody by <a href="href=" title="http://lostechies.com/erichexter/">Eric Hexter</a> on why you should source control your dependencies and 3rd party libraries. He uses an automobile which carries all the tools required to replace a flat tire to illustrate how we should treat our source control systems. Anything that code depends on to do it&#8217;s job should be stored in the same version control system right along side of the code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why Johnny can’t build a decent user interface.]]></title>
+    <link href="http://bforrest.github.com/blog/2011/04/23/Why-Johnny-can%27t-build-a-decent-ui/"/>
+    <updated>2011-04-23T00:00:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2011/04/23/Why-Johnny-can&#8217;t-build-a-decent-ui</id>
+    <content type="html"><![CDATA[<p><a href="http://jeffreyellis.org/blog/?p=8897" title="">Why Johnny can’t build a decent user interface.</a>An interesting read by <a href="http://thethinkerblog.com/?page_id=5">Jeffrey Ellis</a> that I picked up from a <a title="@shanselman" target="_blank" href="http://twitter.com/#!/shanselman">@shanselman</a> tweet. It is a reminder of why I write software -&gt; for end users to get something done. There&#8217;s a list of questions that I need to keep top of mind when developing applications:</p>
+
+<p>+Who are the users</p>
+
+<p>+What are their goals</p>
+
+<p>+What are their tasks</p>
+
+<p>+What information do the users need in order to accomplish those tasks</p>
+
+<p>The information within the comments is also enlightening.</p>
+]]></content>
+  </entry>
+  
 </feed>
