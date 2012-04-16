@@ -4,7 +4,7 @@
   <title><![CDATA[Improving Me]]></title>
   <link href="http://bforrest.github.com/atom.xml" rel="self"/>
   <link href="http://bforrest.github.com/"/>
-  <updated>2012-04-16T11:16:20-05:00</updated>
+  <updated>2012-04-16T11:50:49-05:00</updated>
   <id>http://bforrest.github.com/</id>
   <author>
     <name><![CDATA[Barry Forrest]]></name>
@@ -31,6 +31,94 @@
 <p>after committing and pushing from my source branch.</p>
 
 <p>Now to have some fun learning <a href="http://daringfireball.net/projects/markdown/">markdown</a> and how to style this so that it doesn&#8217;t look like everyone else&#8217;s octopress blog</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Programming & Barriers to Entry]]></title>
+    <link href="http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry/"/>
+    <updated>2012-02-27T00:00:00-06:00</updated>
+    <id>http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry</id>
+    <content type="html"><![CDATA[<p>A <a href="href=" title="https://twitter.com/#!/coridrew">fellow learner</a> has posted <a href="href=" title="http://truncatedcodr.wordpress.com/2012/01/25/programming-barriers-to-entry/">&#8220;Programming &amp; Barriers to Entry&#8221;</a>. Cori has much to say in this article concentrated around command line tools, vim and Ruby. I&#8217;d like to comment on some of the perceptions and share my own opinions.</p>
+
+<h3>Command Line</h3>
+
+
+<p>I picked up on some discord with regard to this type of interaction.</p>
+
+<blockquote>
+
+&#8230;Intellisense (or lack thereof).  Ctrl-spacebar is my friend. It’s what I’ve grown to love. Typing /?—&gt;enter—&gt;up-arrow—&gt;space—&gt;command-I-really-need is a bit of a PITA. It feels like a clunky waste of time.
+
+</blockquote>
+
+
+<p>Aren&#8217;t these the same type of interaction? CTL+Space pops up a list of available commands, arrow up/down to select and hit enter to paste that text into the window. Granted Intellisense is more polished and will show all of the overloads, but I honestly have a difficult time understanding the difference.</p>
+
+<p>[Git Immersion](href=&#8221;http://gitimmersion.com/&#8221; target=&#8221;_blank&#8221;] was very helpful for ramping up quickly with Git. Git is just a plate full of awesome. I can get tons done with four basic commands after I can Alt+Tab to  my bash shell:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -b working_branch #separates my code from the herd.
+</span><span class='line'>
+</span><span class='line'>git status #to see all of the files that I've modified since my last checkin. 
+</span><span class='line'>
+</span><span class='line'>Typing &#8220;git add .&#8221; readies them to be committed to the local repository.
+</span><span class='line'>
+</span><span class='line'>&#8220;git commit -m &#8216;checkin comment&#8217;&#8221; stores them away. </span></code></pre></td></tr></table></div></figure>
+
+
+<p>I don&#8217;t have to right-click anything! Since I&#8217;m working locally, I&#8217;m not at the mercy of a flaky connection to a central server. When I want to diff files, that happens locally too.</p>
+
+<p>I&#8217;ve got BeyondCompare set up so in the bach shell I can use</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git difftool </span></code></pre></td></tr></table></div></figure>
+
+
+<p>and then roll through all of the files that I&#8217;ve changed and it&#8217;s pretty snappy.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gitk all</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Shows the entire history of the repository</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gitk filename</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Will do the same for a single file.</p>
+
+<p>There is a git gui as well as  <a href="href=" title="http://code.google.com/p/tortoisegit/">Tortoise Git</a> to go along with Caleb&#8217;s favorite.</p>
+
+<h3>VIM</h3>
+
+
+<p>It is a very powerful text editor. It really is language agnostic and enables development in a huge variety of languages. Visual Studio, not so much. I started fooling with VIM when I started doing the Ruby Koans. I stumbled through the help tutorial a few times over several months and got the hang of using VIM for navigating documents with the home row keys and pattern matching searches. I try to use it when I&#8217;m not doing .net development, but I&#8217;m still staying in the shallow end of the pool. I&#8217;m still much more comfortable navigating a C# project with Resharper/CodeRush inside VS than I think I&#8217;ll ever be with VIM, but VS has a 10 year head start.</p>
+
+<h3>Ruby and Macs</h3>
+
+
+<p>There seems to be a strong correlation between Macs and Ruby developers among <a href="http://dallashackclub.com/" target="_blank">Hack Club</a> attendees. Many of the folks who attend do own Macs. <a href="http://improvingenterprises.com/" target="_blank">Improving Enterprises</a>, my employer and sponsor of many wonderful user groups, has an amazing employee purchase plan for computers and many of the consultants take full advantage of that benefit. Several of the Macs at Hack Club are running Windows 7 in native mode and many more are running Windows 7 via VMWare Fusion of Parallels.</p>
+
+<p>I&#8217;d hazard a guess that <a href="ttp://twitter.com/gregvaughn" target="_blank">Greg Vaughn</a> is in the minority and using Ruby in OSX. <a href="http://twitter.com/amirrajan" target="_blank">Amir</a> boots to Windows natively via BootCamp and I believe does all of his Ruby development under Windows. I&#8217;ve installed Ruby 1.9 in my VMWare instance and use Growl For Windows and a ruby command prompt for SpecWatchr when I&#8217;m deliberately practicing BDD through the beauty of <a href="http://www.nspec.org/about" target="_blank">NSpec</a>. Ruby in this group is more about learning something new since most of the crew work in .net for paychecks.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[treetrim: Trims source code trees]]></title>
+    <link href="http://bforrest.github.com/blog/2012/01/21/Tree-Trim-Source-Cleaner/"/>
+    <updated>2012-01-21T00:00:00-06:00</updated>
+    <id>http://bforrest.github.com/blog/2012/01/21/Tree-Trim-Source-Cleaner</id>
+    <content type="html"><![CDATA[<p><a href="http://code.google.com/p/treetrim/">Treetrim:</a></p>
+
+<p>I&#8217;ve used this spiffy utility many times. Every time I see a need for it, I&#8217;m working on a PC that doesn&#8217;t have it installed and I can never remember the magic incantation that allowed Google to reveal it to me. So, since I&#8217;m starting to suffer from old-timers, I&#8217;ll keep a handy link for it right here ;-)</p></p>
 ]]></content>
   </entry>
   
