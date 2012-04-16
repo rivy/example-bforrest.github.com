@@ -17,7 +17,7 @@ I picked up on some discord with regard to this type of interaction.
 
 Aren&#8217;t these the same type of interaction? CTL+Space pops up a list of available commands, arrow up/down to select and hit enter to paste that text into the window. Granted Intellisense is more polished and will show all of the overloads, but I honestly have a difficult time understanding the difference.
 
-[Git Immersion](href="http://gitimmersion.com/" target="_blank"] was very helpful for ramping up quickly with Git. Git is just a plate full of awesome. I can get tons done with four basic commands after I can Alt+Tab to  my bash shell:
+[Git Immersion](href="http://gitimmersion.com/") was very helpful for ramping up quickly with Git. Git is just a plate full of awesome. I can get tons done with four basic commands after I can Alt+Tab to  my bash shell:
 ```
 git checkout -b working_branch #separates my code from the herd.
 
