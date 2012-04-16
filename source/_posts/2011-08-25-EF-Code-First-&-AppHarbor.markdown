@@ -11,7 +11,7 @@ Problem number one, I didn&#8217;t create a database on AppHarbor. The quick sol
 
 After a bit of googling, I found a reference to this [EF Tables only](href="http://nuget.org/List/Packages/EFCodeFirst.CreateTablesOnly"] Nuget package. From the package writeup:
 
-<blockquote>Adds a IDatabaseInitializer implementation for EF Code First CTP5, as a workaround for situations where you need to update the tables, but can&#8217;t recreate the database. Works with AppHabor. To use simply set the DontDropDbJustCreateTablesIfModelChanged class as IDatabaseInitializer with DbDatabase.SetInitializer.</blockquote>
+        Adds a IDatabaseInitializer implementation for EF Code First CTP5, as a workaround for situations where you need to update the tables, but can&#8217;t recreate the database. Works with AppHabor. To use simply set the DontDropDbJustCreateTablesIfModelChanged class as IDatabaseInitializer with DbDatabase.SetInitializer.
 
 This package put a code file into the application&#8217;s App_Start folder. By un-commenting this line:
 
