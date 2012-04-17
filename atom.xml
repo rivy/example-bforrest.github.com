@@ -4,7 +4,7 @@
   <title><![CDATA[Improving Me]]></title>
   <link href="http://bforrest.github.com/atom.xml" rel="self"/>
   <link href="http://bforrest.github.com/"/>
-  <updated>2012-04-16T19:05:45-05:00</updated>
+  <updated>2012-04-16T19:20:05-05:00</updated>
   <id>http://bforrest.github.com/</id>
   <author>
     <name><![CDATA[Barry Forrest]]></name>
@@ -47,9 +47,9 @@
   
   <entry>
     <title type="html"><![CDATA[Programming & Barriers to Entry]]></title>
-    <link href="http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry/"/>
+    <link href="http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-to-Entry/"/>
     <updated>2012-02-27T00:00:00-06:00</updated>
-    <id>http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry</id>
+    <id>http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-to-Entry</id>
     <content type="html"><![CDATA[<p>A <a href="https://twitter.com/#!/coridrew">fellow learner</a> has posted <a href="http://truncatedcodr.wordpress.com/2012/01/25/programming-barriers-to-entry/">&#8220;Programming &amp; Barriers to Entry&#8221;</a>. Cori has much to say in this article concentrated around command line tools, vim and Ruby. I&#8217;d like to comment on some of the perceptions and share my own opinions.</p>
 
 <h3>Command Line</h3>
@@ -135,9 +135,9 @@
   
   <entry>
     <title type="html"><![CDATA[EF Code First & AppHarbor]]></title>
-    <link href="http://bforrest.github.com/blog/2011/08/25/EF-Code-First-%2526-AppHarbor/"/>
+    <link href="http://bforrest.github.com/blog/2011/08/25/EF-Code-First-%26-AppHarbor/"/>
     <updated>2011-08-25T00:00:00-05:00</updated>
-    <id>http://bforrest.github.com/blog/2011/08/25/EF-Code-First-%26-AppHarbor</id>
+    <id>http://bforrest.github.com/blog/2011/08/25/EF-Code-First-&-AppHarbor</id>
     <content type="html"><![CDATA[<p>Since my employer, <a href="href=" title="http:/http://www.improvingenterprises.com/">Improving Enterprises</a> lined me up a new gig that uses Entity Framework Code First, I thought I kick off a learning side project with MVC3 and deploy it to [AppHarbor](href=&#8221;https://appharbor.com/&#8221;. Everything seemed simple enough. Use Nuget to install the code first bits, hammer out a couple of model and a datacontext and BOOM! data goes into a database.</p>
 
 <p>It wasn&#8217;t anything pretty, but I was ready to deploy it to AppHarbor. That sounded great, but my first deploy failed. The local build compiled and worked as expected. The source that I pushed to AppHarbor compiled without problem, but the deployment failed.</p>
