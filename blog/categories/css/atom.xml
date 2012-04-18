@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS | Improving Me]]></title>
+  <link href="http://bforrest.github.com/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://bforrest.github.com/"/>
+  <updated>2012-04-18T16:27:26-05:00</updated>
+  <id>http://bforrest.github.com/</id>
+  <author>
+    <name><![CDATA[Barry Forrest]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fixed Navigation Bar With Twitter Bootstrap]]></title>
+    <link href="http://bforrest.github.com/blog/2012/04/18/fixed-navigation-bar-with-twitter-bootstrap/"/>
+    <updated>2012-04-18T15:27:00-05:00</updated>
+    <id>http://bforrest.github.com/blog/2012/04/18/fixed-navigation-bar-with-twitter-bootstrap</id>
+    <content type="html"><![CDATA[<p><a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a> has many very interesting features available. I really liked their fixed sub navigation menus for the feature pages. As you scroll past the subnavigation, it docs with the top of the scroll window and stays there. It also enables click navigation to other feature sections.</p>
+
+<p>I wanted to have the same functionality for my own html pages, so I started digging around. Looking at the page source, I saw an include for "/js/application.js", which is included in the github source project, but is not part of the downloaded assets. At the top of the file is this nice disclaimer:
+<code>javascript Disclaimer
+// NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
+// IT'S ALL JUST JUNK FOR OUR DOCS!
+// ++++++++++++++++++++++++++++++++++++++++++
+</code>
+But I discovered that it is not JUST junk, there is a processScroll function that is just what I'm looking for:</p>
+
+<p>``` javascript Scroll function and handler wiring
+// fix sub nav on scroll
+   var $win = $(window)</p>
+
+<pre><code>  , $nav = $('.subnav')
+  , navTop = $('.subnav').length &amp;&amp; $('.subnav').offset().top - 40
+  , isFixed = 0
+</code></pre>
+
+<p>   processScroll()</p>
+
+<p>   $win.on('scroll', processScroll)</p>
+
+<p>   function processScroll() {</p>
+
+<pre><code>  var i, scrollTop = $win.scrollTop()
+  if (scrollTop &gt;= navTop &amp;&amp; !isFixed) {
+    isFixed = 1
+    $nav.addClass('subnav-fixed')
+  } else if (scrollTop &lt;= navTop &amp;&amp; isFixed) {
+    isFixed = 0
+    $nav.removeClass('subnav-fixed')
+  }
+</code></pre>
+
+<p>   }
+```
+This wires the processScroll() function to the window scroll event and toggles the navigation element based on where it rests relative to the viewport. The idea being to add the 'subnav-fixed' CSS class to keep the element within the viewport.</p>
+
+<p>Attached to the body tag was the first bit of markup that I needed to see:
+<code>html Page Markup
+&lt;body data-spy="scroll" data-target=".subnav" data-offset="50"&gt;
+</code></p>
+
+<p>The navigation div tags contained the rest of the information:
+``` html Navigation markup</p>
+
+<div class="subnav">
+      <li><a href="#labels">Labels</a></li>
+      <li><a href="#badges">Badges</a></li>
+</div>
+
+
+<!-- along with page sections with matching id values -->
+
+
+<p><section id="labels">label information</section>
+<section id="badges">badge information</section>
+```
+By annotating the body tag with the data- attribute of "data-spy", identifying sectional elements with id value and including the
+<a href="http://twitter.github.com/bootstrap/javascript.html#scrollspy">Scrollspy</a> JavaScript plugin, we are able to synchronize the active menu item with the section that is topmost within the viewport.</p>
+
+<p>Now on my // TODO: list is to trick up the blog template to keep it's top navigation bar fixed along the top...</p>
+]]></content>
+  </entry>
+  
+</feed>

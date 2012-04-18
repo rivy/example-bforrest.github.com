@@ -4,48 +4,62 @@
         <loc>
             http://bforrest.github.com/blog/2011/04/23/Why-Johnny-can%27t-build-a-decent-ui/
         </loc>
-        <lastmod>2012-04-15T12:18:29-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://bforrest.github.com/blog/2011/05/10/The-Flat-Tire-Principle-for-Source-Control/
         </loc>
-        <lastmod>2012-04-15T12:25:01-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2011/08/16/CSS-for-Developers/</loc>
-        <lastmod>2012-04-15T12:35:02-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2011/08/21/Javascript-Programming-Patterns/</loc>
-        <lastmod>2012-04-15T12:30:04-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://bforrest.github.com/blog/2011/08/25/EF-Code-First-%2526-AppHarbor/</loc>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2011/08/25/EF-Code-First-%26-AppHarbor/</loc>
-        <lastmod>2012-04-16T19:18:24-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2012/01/21/Tree-Trim-Source-Cleaner/</loc>
-        <lastmod>2012-04-16T11:29:03-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-t0-Entry/</loc>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2012/02/27/Programming-and-Barriers-to-Entry/</loc>
-        <lastmod>2012-04-16T19:18:24-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2012/04/13/that-was-easy/</loc>
-        <lastmod>2012-04-13T15:51:05-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/2012/04/16/everything-old-is-new-again/</loc>
-        <lastmod>2012-04-16T12:27:22-05:00</lastmod>
+        <lastmod>2012-04-18T10:57:58-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://bforrest.github.com/blog/2012/04/18/fixed-navigation-bar-with-twitter-bootstrap/
+        </loc>
+        <lastmod>2012-04-18T16:26:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/blog/archives/</loc>
-        <lastmod>2012-04-16T19:18:24-05:00</lastmod>
+        <lastmod>2012-04-18T16:26:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://bforrest.github.com/</loc>
-        <lastmod>2012-04-16T19:18:24-05:00</lastmod>
+        <lastmod>2012-04-18T16:26:16-05:00</lastmod>
     </url>
 </urlset>
