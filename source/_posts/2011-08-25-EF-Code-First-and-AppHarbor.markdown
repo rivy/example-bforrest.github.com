@@ -3,13 +3,13 @@ layout: post
 title: EF Code First & AppHarbor
 ---
 
-Since my employer, [Improving Enterprises](href="http:/http://www.improvingenterprises.com/") lined me up a new gig that uses Entity Framework Code First, I thought I kick off a learning side project with MVC3 and deploy it to [AppHarbor](href="https://appharbor.com/". Everything seemed simple enough. Use Nuget to install the code first bits, hammer out a couple of model and a datacontext and BOOM! data goes into a database.
+Since my employer, [Improving Enterprises](http://www.improvingenterprises.com/) lined me up a new gig that uses Entity Framework Code First, I thought I kick off a learning side project with MVC3 and deploy it to [AppHarbor](https://appharbor.com/). Everything seemed simple enough. Use Nuget to install the code first bits, hammer out a couple of model and a datacontext and BOOM! data goes into a database.
 
 It wasn&#8217;t anything pretty, but I was ready to deploy it to AppHarbor. That sounded great, but my first deploy failed. The local build compiled and worked as expected. The source that I pushed to AppHarbor compiled without problem, but the deployment failed.
 
 Problem number one, I didn&#8217;t create a database on AppHarbor. The quick solution was to configure the database on AppHarbor following their instructions. My local compile was fine and I expected my deployment to work as well. Wrong.
 
-After a bit of googling, I found a reference to this [EF Tables only](href="http://nuget.org/List/Packages/EFCodeFirst.CreateTablesOnly") Nuget package. From the package writeup:
+After a bit of googling, I found a reference to this [EF Tables only](http://nuget.org/List/Packages/EFCodeFirst.CreateTablesOnly) Nuget package. From the package writeup:
 
 ```
 Adds a IDatabaseInitializer implementation for EF Code First CTP5, as a workaround for
