@@ -2,3 +2,32 @@
   Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="/assets/js/bootstrap-scrollspy.js"></script>
+
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+
+<script type="text/javascript">
+// fix sub nav on scroll
+   var $win = $(window)
+      , $nav = $('.main-navigation')
+      , navTop = $('.main-navigation').length && $('.main-navigation').offset().top - 50
+      , isFixed = 0
+
+   processScroll()
+
+   $win.on('scroll', processScroll)
+
+   function processScroll() {
+      var i, scrollTop = $win.scrollTop()
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1
+        $nav.addClass('subnav subnav-fixed').parent().addClass('padLeft')
+
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0
+        $nav.removeClass('subnav-fixed subnav').parent().removeClass('padLeft')
+      }
+   }
+</script>  
