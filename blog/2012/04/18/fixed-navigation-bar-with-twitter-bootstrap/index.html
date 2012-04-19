@@ -239,6 +239,8 @@
   
   
   
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
 
     
@@ -346,6 +348,8 @@
 </section>
 
 
+<section class="coderwall" data-coderwall-username="bforrest" data-coderwall-orientation="vertical"></section>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
 
   
 </aside>
@@ -357,6 +361,35 @@
   Copyright &copy; 2012 - Barry Forrest -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="/assets/js/bootstrap-scrollspy.js"></script>
+
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+
+<script type="text/javascript">
+// fix sub nav on scroll
+   var $win = $(window)
+      , $nav = $('.main-navigation')
+      , navTop = $('.main-navigation').length && $('.main-navigation').offset().top - 50
+      , isFixed = 0
+
+   processScroll()
+
+   $win.on('scroll', processScroll)
+
+   function processScroll() {
+      var i, scrollTop = $win.scrollTop()
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1
+        $nav.addClass('subnav subnav-fixed').parent().addClass('padLeft')
+
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0
+        $nav.removeClass('subnav-fixed subnav').parent().removeClass('padLeft')
+      }
+   }
+</script>  
 
 </footer>
   
@@ -378,6 +411,15 @@
 </script>
 
 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -405,29 +447,3 @@
         .padLeft ul{ padding-left: 10px;} 
         .padRight { padding-right: 10px;}
 </style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="/assets/js/bootstrap-scrollspy.js"></script>
-<script type="text/javascript">
-// fix sub nav on scroll
-   var $win = $(window)
-      , $nav = $('.main-navigation')
-      , navTop = $('.main-navigation').length && $('.main-navigation').offset().top - 50
-      , isFixed = 0
-
-   processScroll()
-
-   $win.on('scroll', processScroll)
-
-   function processScroll() {
-      var i, scrollTop = $win.scrollTop()
-      if (scrollTop >= navTop && !isFixed) {
-        isFixed = 1
-        $nav.addClass('subnav subnav-fixed').parent().addClass('padLeft')
-
-      } else if (scrollTop <= navTop && isFixed) {
-        isFixed = 0
-        $nav.removeClass('subnav-fixed subnav').parent().removeClass('padLeft')
-      }
-   }
-</script>        
