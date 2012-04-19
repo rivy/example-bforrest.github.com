@@ -16,6 +16,13 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/docs.css" rel="stylesheet">
+  <link href="/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+  <link href="/assets/css/datepicker.css" rel="stylesheet">
 
   
   <link rel="canonical" href="http://bforrest.github.comblog/categories/twitter-bootstrap">
@@ -45,7 +52,7 @@
 
 </head>
 
-<body   >
+<body    data-spy="scroll" data-target=".main-navigation" data-offset="50" >
   <header role="banner"><hgroup>
   <h1><a href="/">Improving Me</a></h1>
   
@@ -65,7 +72,7 @@
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
-  
+
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
@@ -245,3 +252,35 @@
 
 </body>
 </html>
+<style>
+        .subnav { top: 0px;
+        }
+        .padLeft ul{ padding-left: 10px;} 
+        .padRight { padding-right: 10px;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/js/bootstrap-scrollspy.js"></script>
+<script type="text/javascript">
+// fix sub nav on scroll
+   var $win = $(window)
+      , $nav = $('.main-navigation')
+      , navTop = $('.main-navigation').length && $('.main-navigation').offset().top - 50
+      , isFixed = 0
+
+   processScroll()
+
+   $win.on('scroll', processScroll)
+
+   function processScroll() {
+      var i, scrollTop = $win.scrollTop()
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1
+        $nav.addClass('subnav subnav-fixed').parent().addClass('padLeft')
+
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0
+        $nav.removeClass('subnav-fixed subnav').parent().removeClass('padLeft')
+      }
+   }
+</script>        
