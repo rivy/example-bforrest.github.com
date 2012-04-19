@@ -4,7 +4,7 @@
   <title><![CDATA[Improving Me]]></title>
   <link href="http://bforrest.github.com/atom.xml" rel="self"/>
   <link href="http://bforrest.github.com/"/>
-  <updated>2012-04-18T16:48:09-05:00</updated>
+  <updated>2012-04-18T19:02:50-05:00</updated>
   <id>http://bforrest.github.com/</id>
   <author>
     <name><![CDATA[Barry Forrest]]></name>
@@ -236,13 +236,13 @@
     <link href="http://bforrest.github.com/blog/2011/08/25/EF-Code-First-and-AppHarbor/"/>
     <updated>2011-08-25T00:00:00-05:00</updated>
     <id>http://bforrest.github.com/blog/2011/08/25/EF-Code-First-and-AppHarbor</id>
-    <content type="html"><![CDATA[<p>Since my employer, <a href="href=" title="http:/http://www.improvingenterprises.com/">Improving Enterprises</a> lined me up a new gig that uses Entity Framework Code First, I thought I kick off a learning side project with MVC3 and deploy it to [AppHarbor](href=&#8221;https://appharbor.com/&#8221;. Everything seemed simple enough. Use Nuget to install the code first bits, hammer out a couple of model and a datacontext and BOOM! data goes into a database.</p>
+    <content type="html"><![CDATA[<p>Since my employer, <a href="http://www.improvingenterprises.com/">Improving Enterprises</a> lined me up a new gig that uses Entity Framework Code First, I thought I kick off a learning side project with MVC3 and deploy it to <a href="https://appharbor.com/">AppHarbor</a>. Everything seemed simple enough. Use Nuget to install the code first bits, hammer out a couple of model and a datacontext and BOOM! data goes into a database.</p>
 
 <p>It wasn&#8217;t anything pretty, but I was ready to deploy it to AppHarbor. That sounded great, but my first deploy failed. The local build compiled and worked as expected. The source that I pushed to AppHarbor compiled without problem, but the deployment failed.</p>
 
 <p>Problem number one, I didn&#8217;t create a database on AppHarbor. The quick solution was to configure the database on AppHarbor following their instructions. My local compile was fine and I expected my deployment to work as well. Wrong.</p>
 
-<p>After a bit of googling, I found a reference to this <a href="href=" title="http://nuget.org/List/Packages/EFCodeFirst.CreateTablesOnly">EF Tables only</a> Nuget package. From the package writeup:</p>
+<p>After a bit of googling, I found a reference to this <a href="http://nuget.org/List/Packages/EFCodeFirst.CreateTablesOnly">EF Tables only</a> Nuget package. From the package writeup:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
