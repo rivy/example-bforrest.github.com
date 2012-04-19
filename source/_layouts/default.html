@@ -1,6 +1,6 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 {% include head.html %}
-<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %}>
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %} data-spy="scroll" data-target=".main-navigation" data-offset="50" >
   <header role="banner">{% include header.html %}</header>
   <nav role="navigation">{% include navigation.html %}</nav>
   <div id="main">
@@ -12,3 +12,35 @@
   {% include after_footer.html %}
 </body>
 </html>
+<style>
+        .subnav { top: 0px;
+        }
+        .padLeft ul{ padding-left: 10px;} 
+        .padRight { padding-right: 10px;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="{{ root_url }}/assets/js/bootstrap-scrollspy.js"></script>
+<script type="text/javascript">
+// fix sub nav on scroll
+   var $win = $(window)
+      , $nav = $('.main-navigation')
+      , navTop = $('.main-navigation').length && $('.main-navigation').offset().top - 50
+      , isFixed = 0
+
+   processScroll()
+
+   $win.on('scroll', processScroll)
+
+   function processScroll() {
+      var i, scrollTop = $win.scrollTop()
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1
+        $nav.addClass('subnav subnav-fixed').parent().addClass('padLeft')
+
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0
+        $nav.removeClass('subnav-fixed subnav').parent().removeClass('padLeft')
+      }
+   }
+</script>        
