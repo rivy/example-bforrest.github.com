@@ -9,7 +9,7 @@
   <meta name="author" content="Barry Forrest">
 
   
-  <meta name="description" content="Twitter Bootstrap has many very interesting features available. I really liked their fixed sub navigation menus for the feature pages. As you scroll &hellip;">
+  <meta name="description" content="I&#8217;ve picked up a few badges via CoderWall and I wanted to include them on the blog with the rest of the information in the right side column. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,73 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/22/adding-coderwall-badges/">Adding CoderWall Badges</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-22T10:42:00-05:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve picked up a few badges via <a href="http://coderwall.com/">CoderWall</a> and I wanted to include them on the blog with the rest of the information in the right side column.</p>
+
+<p>CoderWall has <a href="http://coderwall.com/api">instructions</a> under the sub heading &#8220;Official blog badge&#8221; that detail how to interact with their web api for retrieving badges. My main investigation was how and where to include these snippets within the octopress templates.</p>
+
+<p>The comments included in the Octopress _config.yml were quite helpful. This was exactly the guidance that I needed.</p>
+
+<figure class='code'><figcaption><span>excerpt from _config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># list each of the sidebar modules you want to include, in the order you want them to appear.</span>
+</span><span class='line'><span class="c1"># To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39;</span>
+</span><span class='line'><span class="l-Scalar-Plain">default_asides</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">asides/recent_posts.html</span><span class="p-Indicator">,</span> <span class="nv">asides/github.html</span><span class="p-Indicator">,</span> <span class="nv">asides/twitter.html</span><span class="p-Indicator">,</span> <span class="nv">asides/delicious.html</span><span class="p-Indicator">,</span> <span class="nv">asides/pinboard.html</span><span class="p-Indicator">,</span> <span class="nv">asides/googleplus.html</span><span class="p-Indicator">,</span> <span class="nv">custom/asides/coder_wall.html</span><span class="p-Indicator">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, I was off to the &#8216;custom/asides/&#8217; folder to add a &#8216;coder_all.html&#8217; file. Inside this file, I pasted the snippet from the CoderWall api page, updating it to use my user id.</p>
+
+<script src="https://gist.github.com/1585413.js?file=coderwall_badge_markup.html"></script>
+
+
+<p>I ran thru &#8216;rake generate&#8217; and &#8216;rake preview&#8217; to see my changes in the browser. I was rewarded with absolutely nothing. Sad Panda. So I looked at the Chrome debug console and found the jQuery was not defined.</p>
+
+<p>The internets have taught me to include my script tags near the end of my mark up, I removed the script tag from my aside template. Since Octopress has a footer.html template, I opened that up to include my script tags, ensuring that the jQuery tag was before the CoderWall js file.</p>
+
+<figure class='code'><figcaption><span>script tags</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://coderwall.com/javascripts/jquery.coderwall.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One more time thru the &#8216;rake generate, rake preview&#8217; dance and&#8230; TA-DA! At the bottom of the Aside column I now have CoderWall badges.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -628,53 +695,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/23/Why-Johnny-can%27t-build-a-decent-ui/">Why Johnny Can’t Build a Decent User Interface.</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-23T00:00:00-05:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://jeffreyellis.org/blog/?p=8897" title="">Why Johnny can’t build a decent user interface.</a>An interesting read by <a href="http://thethinkerblog.com/?page_id=5">Jeffrey Ellis</a> that I picked up from a <a title="@shanselman" target="_blank" href="http://twitter.com/#!/shanselman">@shanselman</a> tweet. It is a reminder of why I write software -&gt; for end users to get something done. There&#8217;s a list of questions that I need to keep top of mind when developing applications:</p>
-
-<p>+Who are the users</p>
-
-<p>+What are their goals</p>
-
-<p>+What are their tasks</p>
-
-<p>+What information do the users need in order to accomplish those tasks</p>
-
-<p>The information within the comments is also enlightening.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -685,6 +708,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/22/adding-coderwall-badges/">Adding CoderWall Badges</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/04/18/fixed-navigation-bar-with-twitter-bootstrap/">Fixed Navigation Bar With Twitter Bootstrap</a>
@@ -700,10 +727,6 @@
     
       <li class="post">
         <a href="/blog/2012/02/27/Programming-and-Barriers-to-Entry/">Programming & Barriers to Entry</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/21/Tree-Trim-Source-Cleaner/">treetrim: Trims source code trees</a>
       </li>
     
   </ul>
@@ -767,6 +790,7 @@
 </section>
 
 
+<hr/>
 <section class="coderwall" data-coderwall-username="bforrest" data-coderwall-orientation="vertical"></section>
 <link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
 

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: CSS - Improving Me</title>
+  <title>Adding CoderWall Badges - Improving Me</title>
   <meta name="author" content="Barry Forrest">
 
   
-  <meta name="description" content="Category: CSS">
+  <meta name="description" content="I&#8217;ve picked up a few badges via CoderWall and I wanted to include them on the blog with the rest of the information in the right side column. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -25,7 +25,7 @@
   <link href="/assets/css/datepicker.css" rel="stylesheet">
 
   
-  <link rel="canonical" href="http://bforrest.github.comblog/categories/css">
+  <link rel="canonical" href="http://bforrest.github.com/blog/2012/04/22/adding-coderwall-badges">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -82,36 +82,118 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: CSS</h1>
+    
+      <h1 class="entry-title">Adding CoderWall Badges</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-22T10:42:00-05:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&#8217;ve picked up a few badges via <a href="http://coderwall.com/">CoderWall</a> and I wanted to include them on the blog with the rest of the information in the right side column.</p>
 
-  
-  <h2>2012</h2>
+<p>CoderWall has <a href="http://coderwall.com/api">instructions</a> under the sub heading &#8220;Official blog badge&#8221; that detail how to interact with their web api for retrieving badges. My main investigation was how and where to include these snippets within the octopress templates.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/04/18/fixed-navigation-bar-with-twitter-bootstrap/">Fixed Navigation Bar With Twitter Bootstrap</a></h1>
-<time datetime="2012-04-18T15:27:00-05:00" pubdate><span class='month'>Apr</span> <span class='day'>18</span> <span class='year'>2012</span></time>
+<p>The comments included in the Octopress _config.yml were quite helpful. This was exactly the guidance that I needed.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/twitter-bootstrap/'>Twitter Bootstrap</a></span>
-</footer>
+<figure class='code'><figcaption><span>excerpt from _config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># list each of the sidebar modules you want to include, in the order you want them to appear.</span>
+</span><span class='line'><span class="c1"># To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39;</span>
+</span><span class='line'><span class="l-Scalar-Plain">default_asides</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">asides/recent_posts.html</span><span class="p-Indicator">,</span> <span class="nv">asides/github.html</span><span class="p-Indicator">,</span> <span class="nv">asides/twitter.html</span><span class="p-Indicator">,</span> <span class="nv">asides/delicious.html</span><span class="p-Indicator">,</span> <span class="nv">asides/pinboard.html</span><span class="p-Indicator">,</span> <span class="nv">asides/googleplus.html</span><span class="p-Indicator">,</span> <span class="nv">custom/asides/coder_wall.html</span><span class="p-Indicator">]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>So, I was off to the &#8216;custom/asides/&#8217; folder to add a &#8216;coder_all.html&#8217; file. Inside this file, I pasted the snippet from the CoderWall api page, updating it to use my user id.</p>
 
+<script src="https://gist.github.com/1585413.js?file=coderwall_badge_markup.html"></script>
+
+
+<p>I ran thru &#8216;rake generate&#8217; and &#8216;rake preview&#8217; to see my changes in the browser. I was rewarded with absolutely nothing. Sad Panda. So I looked at the Chrome debug console and found the jQuery was not defined.</p>
+
+<p>The internets have taught me to include my script tags near the end of my mark up, I removed the script tag from my aside template. Since Octopress has a footer.html template, I opened that up to include my script tags, ensuring that the jQuery tag was before the CoderWall js file.</p>
+
+<figure class='code'><figcaption><span>script tags</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://coderwall.com/javascripts/jquery.coderwall.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One more time thru the &#8216;rake generate, rake preview&#8217; dance and&#8230; TA-DA! At the bottom of the Aside column I now have CoderWall badges.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Barry Forrest</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-22T10:42:00-05:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://bforrest.github.com/blog/2012/04/22/adding-coderwall-badges/" data-via="bforrest30" data-counturl="http://bforrest.github.com/blog/2012/04/22/adding-coderwall-badges/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/18/fixed-navigation-bar-with-twitter-bootstrap/" title="Previous Post: Fixed Navigation Bar With Twitter Bootstrap">&laquo; Fixed Navigation Bar With Twitter Bootstrap</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -253,7 +335,10 @@
       var disqus_shortname = 'bforrest-github-com';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://bforrest.github.com/blog/2012/04/22/adding-coderwall-badges/';
+        var disqus_url = 'http://bforrest.github.com/blog/2012/04/22/adding-coderwall-badges/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
